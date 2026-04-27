@@ -1,0 +1,23 @@
+# 띵동 사전 테스트 환경 (Python 3.9.6 기준)
+# context7 문서 참조 및 numpy 2.0.2 호환성 확인 기준
+
+# 오디오 처리
+librosa==0.10.2          # Python 3.9 + numpy 2.x 지원 (context7 확인)
+soundfile==0.12.1        # WAV 로드/저장
+scipy==1.13.1            # 신호 처리, fastdtw dist 함수
+
+# ML
+tensorflow==2.16.1       # Python 3.9 지원 최신판
+tensorflow-hub==0.16.1   # YAMNet pre-trained 모델 로드
+scikit-learn==1.5.1      # 평가 지표 (confusion matrix 등)
+
+# DTW
+fastdtw==0.3.4           # SP/DTW + cosine distance (context7 확인)
+
+# 서버 (EC2 배포용)
+flask==3.0.3
+gunicorn==22.0.0
+
+# 유틸
+numpy==2.0.2             # 현재 설치됨
+matplotlib==3.9.2        # 시각화 (임계값 트레이드오프 그래프)
