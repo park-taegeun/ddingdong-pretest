@@ -8,6 +8,11 @@ env/
 samples/
 *.wav
 
+# Large temporary data files
+data/unbalanced_train_segments_tmp.csv
+data/FSD50K.ground_truth.zip
+data/data/
+
 # Python artifacts
 __pycache__/
 *.py[cod]
