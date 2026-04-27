@@ -24,7 +24,8 @@ def main():
     print("YAMNet 모델을 로딩 중입니다...")
     model = hub.load('https://tfhub.dev/google/yamnet/1')
     
-    base_dir = 'samples'
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.join(script_dir, 'samples')
     doorbell_files = glob.glob(os.path.join(base_dir, 'doorbell', '*.wav'))
     if len(doorbell_files) < 2:
         print("초인종 샘플 부족으로 테스트를 진행할 수 없습니다.")

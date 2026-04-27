@@ -24,7 +24,8 @@ def calculate_dtw_distance(mel1, mel2):
     return distance
 
 def main():
-    base_dir = 'samples'
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.join(script_dir, 'samples')
     
     doorbell_files = glob.glob(os.path.join(base_dir, 'doorbell', '*.wav'))
     knock_files = glob.glob(os.path.join(base_dir, 'knock', '*.wav'))

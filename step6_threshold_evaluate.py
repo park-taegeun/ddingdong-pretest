@@ -19,7 +19,8 @@ def main():
     print("YAMNet 모델을 로딩 중입니다...")
     model = hub.load('https://tfhub.dev/google/yamnet/1')
     
-    base_dir = 'samples'
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.join(script_dir, 'samples')
     classes = ['doorbell', 'knock', 'fire_alarm']
     
     # 클래스 별 샘플 로드 및 점수 계산 캐싱
