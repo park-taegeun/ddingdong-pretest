@@ -1,0 +1,17 @@
+# Environments
+venv/
+.venv/
+env/
+.env/
+
+# Data and Samples
+samples/
+*.wav
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Mac OS
+.DS_Store
