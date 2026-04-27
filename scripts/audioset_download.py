@@ -15,13 +15,12 @@ import time
 from pathlib import Path
 
 FILTERED_DIR = 'data/filtered'
-OUTPUT_BASE  = 'data/raw'
+OUTPUT_BASE  = str(Path.home() / 'Desktop/서경대학교/시험 준비/26-1/공학종합설계1/ML 학습 데이터/ddingdong_dataset/00_source_raw/audioset')
 
 CLASS_MAP = {
-    'doorbell':      'doorbell',
-    'knock':         'knock',
-    'smoke_detector':'smoke_detector',
-    'fire_alarm':    'fire_alarm',
+    'doorbell':   'doorbell',
+    'knock':      'knock',
+    'fire_alarm': 'fire_alarm',
 }
 
 SPLITS = ['balanced_train', 'eval']

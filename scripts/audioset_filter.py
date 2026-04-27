@@ -8,10 +8,10 @@ import os
 import sys
 
 TARGET = {
-    '/m/0160x5': 'doorbell',
+    '/m/03wwcy': 'doorbell',
     '/m/0dxrf':  'knock',
     '/m/01g50p': 'smoke_detector',
-    '/m/0d6p0':  'fire_alarm',
+    '/m/07pp_mv': 'fire_alarm',
 }
 
 CSV_FILES = {
