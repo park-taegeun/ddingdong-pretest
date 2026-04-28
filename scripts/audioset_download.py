@@ -31,7 +31,7 @@ YTDLP_OPTS = [
     '--extract-audio',
     '--audio-format', 'wav',
     '--audio-quality', '0',
-    '--postprocessor-args', '-ar 16000 -ac 1',  # 16kHz mono
+    '--postprocessor-args', 'ffmpeg:-ar 16000 -ac 1',  # 16kHz mono
 ]
 
 
@@ -40,8 +40,14 @@ def download_clip(ytid: str, start: float, end: float, out_path: str) -> bool:
     url = f'https://www.youtube.com/watch?v={ytid}'
     duration = end - start
 
+    # homebrew 설치 우선, 없으면 pip 설치본, 최후 PATH 탐색
+    ytdlp_bin = '/opt/homebrew/bin/yt-dlp'
+    if not Path(ytdlp_bin).exists():
+        ytdlp_bin = str(Path.home() / 'Library/Python/3.9/bin/yt-dlp')
+    if not Path(ytdlp_bin).exists():
+        ytdlp_bin = 'yt-dlp'
     cmd = [
-        'yt-dlp',
+        ytdlp_bin,
         *YTDLP_OPTS,
         '--download-sections', f'*{start:.1f}-{end:.1f}',
         '--force-keyframes-at-cuts',
